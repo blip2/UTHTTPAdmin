@@ -6,25 +6,27 @@ This file details the (proposed) json protocol for communicating with the server
 Getting Information
 -----------
 
-** Status **
-Query:
-    /server/status
+**Status**
+* Query:
+    `/server/status`
 
-Response:
-    {
+* Response:
+    
+    ```{
         "state": "GAMESTATE",
         "gamemode": "GAMEMODE",
         "map": "MAPNAME",
         "maplist": "LISTNAME",
         "playercount": "PLAYERCOUNT",
-    }
+    }```
 
-** Players **
-Query:
-    /server/players
+**Players**
+* Query:
+    `/server/players`
 
-Response:
-    {
+* Response:
+
+    ```{
         "players": {
             "0": {
                 "id": "PLAYERID",
@@ -51,19 +53,21 @@ Response:
                 "multikills": "MULTIKILLS",
             }
         }
-    }
+    }```
 
-** Map Lists **
-Query:
-    /server/maplist
-    {
+**Map Lists**
+
+* Query:
+    `/server/maplist`
+    ```{
         "listname": "LISTNAME"
-    }
+    }```
 
 LISTNAME is optional, not providing a value returns all lists.
 
-Response:
-    {
+* Response:
+
+    ```{
         "maplists": {
             "listname": "LISTNAME",
             "maps": {
@@ -72,34 +76,40 @@ Response:
                 "2": "mapname3",
             }
         }
-    }
+    }```
 
 Sending Commands
 -----------
 
-** Console Command **
-Query:
-    /server/console
-    {
+**Console Command**
+
+* Query:
+    `/server/console`
+    
+    ```{
         "command": "CONSOLECMD",
-    }
+    }```
 
-Response:
-    {
+* Response:
+* 
+    ```{
         "response": "OK",
-    }
+    }```
 
-** Kick Player **
-Query:
-    /server/kick
-    {
+**Kick Player**
+
+* Query:
+    `/server/kick`
+    
+    ```{
         "player": "PLAYERID",
-    }
+    }```
 
-Response:
-    {
+* Response:
+
+    ```{
         "response": "OK",
-    }
+    }```
 
 Getting Configuration Values
 -----------
